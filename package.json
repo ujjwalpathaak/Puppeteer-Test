@@ -1,0 +1,27 @@
+{
+  "name": "puppeteer-test",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "controller.careerjet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ujjwalpathaak/Puppeteer-Test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ujjwalpathaak/Puppeteer-Test/issues"
+  },
+  "homepage": "https://github.com/ujjwalpathaak/Puppeteer-Test#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "puppeteer": "^21.7.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}
