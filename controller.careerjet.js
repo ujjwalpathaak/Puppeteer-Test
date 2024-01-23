@@ -1,6 +1,6 @@
+dotenv.config();
 import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
-require("dotenv").config();
 
 const details = {
     email: "pathak2002ujjwal@gmail.com",
