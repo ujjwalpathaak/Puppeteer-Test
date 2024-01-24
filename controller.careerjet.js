@@ -23,13 +23,10 @@ const startApply = async () => {
     try {
         await page.goto("https://www.careerjet.co.in/login");
         await page.waitForTimeout(1000);
-
         await page.type('#email', details.email);
         await page.type('#password', details.password);
         await page.click('button[type="submit"]');
         await page.waitForTimeout(2000);
-
-        // https://www.careerjet.co.in/ui-developer-jobs/noida-84042.html?ay=1
 
         await page.goto("https://www.careerjet.co.in/" + details.position + "-jobs/" + details.location + "-84042.html?ay=1");
 
