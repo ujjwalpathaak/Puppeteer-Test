@@ -83,6 +83,4 @@ const startApply = async () => {
     }
 }
 
-startApply();
-
 export default startApply;
