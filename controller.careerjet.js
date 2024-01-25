@@ -13,13 +13,16 @@ const details = {
 
 const setupBrowser = async () => {
     puppeteer.use(StealthPlugin())
-    const browser = await puppeteer.launch({ args: ["--disable-setuid-sandbox", "--no-sandbox", "--single-process", "--no-zygote"], headless: true, executablePath: process.env.NODE_ENV === "production" ? process.env.PUPPETEER_EXECUTABLE_PATH : puppeteer.executablePath() }); // Set headless to true for production
+    const browser = await puppeteer.launch({ 
+        args: ["--disable-setuid-sandbox", "--no-sandbox", "--single-process", "--no-zygote"], headless: true, executablePath: process.env.NODE_ENV === "production" ? process.env.PUPPETEER_EXECUTABLE_PATH : puppeteer.executablePath() }); // Set headless to true for production
     const page = await browser.newPage();
     return { browser, page };
 }
 
 const startApply = async () => {
+    console.log("Starting application process...");
     const { browser, page } = await setupBrowser();
+    console.log("Setting up browser and opening CareerJet...");
     try {
         await page.goto("https://www.careerjet.co.in/login");
         await page.waitForTimeout(1000);
