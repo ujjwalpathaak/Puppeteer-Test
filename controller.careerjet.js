@@ -26,6 +26,7 @@ const startApply = async () => {
     console.log("Setting up browser and opening CareerJet...");
     try {
         await page.goto("https://www.careerjet.co.in/login");
+        console.log(await page.content());
         await page.waitForTimeout(1000);
         await page.type('#email', details.email);
         await page.type('#password', details.password);
