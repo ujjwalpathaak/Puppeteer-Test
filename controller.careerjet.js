@@ -41,6 +41,15 @@ const startApply = async () => {
         console.log("CareerJet Jobs page opened");
         console.log(await page.content());
 
+        await page.waitForSelector('iframe[title="reCAPTCHA"]');
+        const frameHandle = await page.$('iframe[title="reCAPTCHA"]');
+        const frame = await frameHandle.contentFrame();
+        await frame.click('.recaptcha-checkbox');
+        await page.waitForTimeout(5000);
+        console.log("Captcha solved");
+
+        console.log(await page.content());
+
         // const jobURLs = await page.$$eval('article.job.clicky', articles => {
         //     return articles.map(article => article.getAttribute('data-url'));
         // });
